@@ -1,6 +1,6 @@
 FROM ghcr.io/void-linux/void-glibc:latest
-ARG S6_OVERLAY_VERSION=3.1.5.0
-ARG WINTERCMS_VERSION=1.2.2
+ARG S6_OVERLAY_VERSION=3.1.6.2
+ARG WINTERCMS_VERSION=1.2.3
 ENV WINTERCMS_DIR=/var/www/html
 ENV USER http
 ENV PHP_VERSION=8.2
@@ -63,8 +63,8 @@ RUN mkdir -p /etc/s6-overlay/s6-rc.d/user/contents.d && \
 # download
 RUN mkdir -p /var/www && \
 	curl -L -o /tmp/wintercms.zip https://github.com/wintercms/web-installer/releases/download/v${WINTERCMS_VERSION}/install.zip && \
-	unzip -qq /tmp/wintercms.zip -d /var/www && \
-	chown -R ${USER}:${USER} /var/www
+	unzip -qq /tmp/wintercms.zip -d ${WINTERCMS_DIR} && \
+	chown -R ${USER}:${USER} ${WINTERCMS_DIR}
 
 # expose nginx
 EXPOSE 80
