@@ -10,4 +10,6 @@ You can pull my image and deploy it:
 
 Web Installer can access at `http://127.0.0.1:3000/install.html`.
 
+Default working directory: `/var/www/html`.
+
 This image does not support Microsoft SQL Server, other SQL is OK.

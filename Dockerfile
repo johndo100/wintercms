@@ -1,7 +1,7 @@
 FROM ghcr.io/void-linux/void-glibc:latest
 ARG S6_OVERLAY_VERSION=3.1.5.0
 ARG WINTERCMS_VERSION=1.2.2
-ENV WINTERCMS_DIR=/var/www
+ENV WINTERCMS_DIR=/var/www/html
 ENV USER http
 ENV PHP_VERSION=8.2
 ENV PHP_PATH php-fpm8.2
